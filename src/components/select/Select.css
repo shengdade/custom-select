@@ -1,0 +1,100 @@
+.wrapper {
+  position: relative;
+  width: 24rem;
+  min-height: 36px;
+  padding-left: 0.5rem;
+  padding-right: 3rem;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.values {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.value {
+  display: flex;
+  align-items: center;
+  background-color: rgb(241, 243, 245);
+  color: rgb(73, 80, 87);
+  height: 24px;
+  padding-left: 8px;
+  padding-right: 4px;
+  margin: 2px;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: default;
+}
+
+.valueIcon {
+  padding-left: 4px;
+  color: rgb(73, 80, 87);
+  width: 1rem;
+  height: 1rem;
+}
+
+.input {
+  flex: 1;
+  width: 0;
+  border: 0;
+  outline: 0;
+}
+
+.actions {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actionIcon {
+  width: 1.5rem;
+  height: 1rem;
+  color: #868e96;
+}
+
+.separator {
+  height: 1rem;
+  border-left: 1px solid #ced4da;
+}
+
+.dropdown {
+  width: 24rem;
+  margin-top: 4px;
+  position: absolute;
+  border: 1px solid rgb(233, 236, 239);
+  background: rgb(255, 255, 255);
+  box-shadow: rgb(0 0 0 / 5%) 0px 1px 3px, rgb(0 0 0 / 5%) 0px 10px 15px -5px,
+    rgb(0 0 0 / 4%) 0px 7px 7px -5px;
+  border-radius: 4px;
+  display: none;
+}
+.dropdown.show {
+  display: block;
+}
+
+.itemsWrapper {
+  list-style: none;
+  margin: 0;
+  padding-inline-start: 0;
+}
+
+.item {
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+.item:active,
+.item:focus,
+.item:hover {
+  background: rgb(241, 243, 245);
+  cursor: pointer;
+}
