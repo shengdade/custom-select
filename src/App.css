@@ -5,3 +5,12 @@
   justify-content: center;
   flex-direction: column;
 }
+
+h4 {
+  width: 24rem;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+h4:first-child {
+  margin-top: 0;
+}
