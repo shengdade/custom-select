@@ -1,46 +1,114 @@
-# Getting Started with Create React App
+# Custom Select
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Properties
 
-In the project directory, you can run:
+### `options` (required)
 
-### `npm start`
+An array of options to select
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```typescript
+<Select
+  options={[
+    { name: 'Ocean', value: 'ocean' },
+    { name: 'Orange', value: 'orange' },
+    { name: 'Yellow', value: 'yellow' },
+    { name: 'Forest', value: 'forest' },
+  ]}
+  placeholder=""
+  value=""
+/>
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![Image](demo/options.png)
 
-### `npm test`
+### `placeholder` (required)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A string value that shows up when no other items are selected
 
-### `npm run build`
+```typescript
+<Select placeholder="Select an item" options={[]} value="" />
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Image](demo/placeholder.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `value` (required)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The current HTML value of the select; if value matches one of the option values, that option should be selected by default
 
-### `npm run eject`
+```typescript
+<Select
+  value="orange"
+  options={[
+    { name: 'Ocean', value: 'ocean' },
+    { name: 'Orange', value: 'orange' },
+    { name: 'Yellow', value: 'yellow' },
+    { name: 'Forest', value: 'forest' },
+  ]}
+  placeholder=""
+/>
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Image](demo/value.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `clearable` (optional)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+If true, show a close button to clear input
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```typescript
+<Select clearable options={[]} value="" placeholder="" />
+```
 
-## Learn More
+![Image](demo/clearable.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `multiple` (optional)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+If true, allow user select multiple options
+
+```typescript
+<Select
+  multiple
+  options={[
+    { name: 'Ocean', value: 'ocean' },
+    { name: 'Orange', value: 'orange' },
+    { name: 'Yellow', value: 'yellow' },
+    { name: 'Forest', value: 'forest' },
+  ]}
+  value=""
+  placeholder=""
+/>
+```
+
+![Image](demo/multiple.png)
+
+### `styles` (optional)
+
+allow user to style each part of the select component:
+
+| Name         | Description            |
+| ------------ | ---------------------- |
+| root         | Root wrapper           |
+| wrapper      | Root Input element     |
+| input        | Main input element     |
+| values       | Values wrapper         |
+| value        | Value element          |
+| valueIcon    | Value icon element     |
+| actions      | Actions wrapper        |
+| separator    | Divider element        |
+| actionIcon   | Action icon element    |
+| dropdown     | Dropdown element       |
+| itemsWrapper | Dropdown items wrapper |
+| item         | Dropdown item element  |
+
+```typescript
+<Select
+  styles={{ actionIcon: { color: 'orange' } }}
+  clearable
+  options={[]}
+  value=""
+  placeholder=""
+/>
+```
+
+![Image](demo/styles.png)
